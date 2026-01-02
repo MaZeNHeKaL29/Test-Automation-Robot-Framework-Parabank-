@@ -29,23 +29,19 @@ Test-Automation-Robot-Framework-Parabank
 │   ├── create_savings_account.robot
 │   └── loan_request.robot
 │
-├── resources
+├── keywords
 │   ├── login_keywords.robot
 │   ├── registration_keywords.robot
 │   ├── account_keywords.robot
 │   └── loan_keywords.robot
 │
-├── variables
+├── resources
 │   └── variables.robot
 │
 ├── reports
 │   ├── log.html
 │   ├── report.html
 │   └── output.xml
-│
-├── requirements.txt
-├── .gitignore
-└── README.md
 ```
 
 ---

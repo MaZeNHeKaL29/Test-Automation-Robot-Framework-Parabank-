@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-01-02T16:01:56.434498" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="D:\Software Testing ITI\RobotFramework\TestProject\tests">
+<suite id="s1-s1" name="1 Negative Login" source="D:\Software Testing ITI\RobotFramework\TestProject\tests\1_negative_login.robot">
+<test id="s1-s1-t1" name="Negative Login With Invalid Credentials" line="8">
+<kw name="Open Parabank" owner="login_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:01:57.329616" level="INFO">Opening browser 'Chrome' to base url 'https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-02T16:01:57.328808" elapsed="3.827064"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-02T16:02:01.156754" elapsed="0.177636"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>name:username</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:01.336723" elapsed="0.056508"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:01:57.326442" elapsed="4.067134"/>
+</kw>
+<kw name="Enter Credentials And Login" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:01.397873" level="INFO">Typing text 'invalidUser' into text field 'name:username'.</msg>
+<arg>name:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:01.396845" elapsed="0.356541"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:01.755026" level="INFO">Typing text 'invalidPassword' into text field 'name:password'.</msg>
+<arg>name:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:01.754119" elapsed="0.297674"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:02.052659" level="INFO">Clicking button 'css:input[value='Log In']'.</msg>
+<arg>css:input[value='Log In']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:02.052191" elapsed="0.677691"/>
+</kw>
+<arg>${INVALID_USER}</arg>
+<arg>${INVALID_PASS}</arg>
+<status status="PASS" start="2026-01-02T16:02:01.395466" elapsed="1.334914"/>
+</kw>
+<kw name="Verify Error Message Is Displayed" owner="login_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css:.error</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:02.732444" elapsed="0.743094"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:03.530118" level="INFO">Element 'css:.error' is displayed.</msg>
+<arg>css:.error</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T16:02:03.476012" elapsed="0.054321"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:03.531324" level="INFO">Verifying element 'css:.error' contains exact text 'The username and password could not be verified.'.</msg>
+<arg>css:.error</arg>
+<arg>${ERROR_MESSAGE}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-01-02T16:02:03.530700" elapsed="0.076372"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:02.731535" elapsed="0.875974"/>
+</kw>
+<kw name="Close Browser Session" owner="login_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-02T16:02:03.609487" elapsed="2.349469"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:03.608686" elapsed="2.350660"/>
+</kw>
+<doc>Verify error message is shown for invalid login</doc>
+<status status="PASS" start="2026-01-02T16:01:57.324168" elapsed="8.635907"/>
+</test>
+<doc>Negative Login Test for Parabank</doc>
+<status status="PASS" start="2026-01-02T16:01:56.562786" elapsed="9.400569"/>
+</suite>
+<suite id="s1-s2" name="2 Registration And Login" source="D:\Software Testing ITI\RobotFramework\TestProject\tests\2_registration_and_login.robot">
+<test id="s1-s2-t1" name="User Can Register And Is Automatically Logged In" line="9">
+<kw name="Open Parabank" owner="registration_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:05.994254" level="INFO">Opening browser 'Chrome' to base url 'https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-02T16:02:05.992500" elapsed="3.720786"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-02T16:02:09.714310" elapsed="0.150334"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:05.991713" elapsed="3.873314"/>
+</kw>
+<kw name="Navigate To Registration Page" owner="registration_keywords">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:09.868107" level="INFO">Clicking link 'Register'.</msg>
+<arg>Register</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:09.867294" elapsed="0.887191"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:09.866114" elapsed="0.888805"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2026-01-02T16:02:10.757376" level="INFO">${UTCTime} = 2026-01-02 14:02:10</msg>
+<var>${UTCTime}</var>
+<arg>time_zone=UTC</arg>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2026-01-02T16:02:10.756004" elapsed="0.001551"/>
+</kw>
+<kw name="Fill Registration Form" owner="registration_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:10.761474" level="INFO">Typing text 'Mazen' into text field 'id:customer.firstName'.</msg>
+<arg>id:customer.firstName</arg>
+<arg>${FIRST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:10.760603" elapsed="0.393618"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:11.155179" level="INFO">Typing text 'Hekal' into text field 'id:customer.lastName'.</msg>
+<arg>id:customer.lastName</arg>
+<arg>${LAST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:11.154628" elapsed="0.307898"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:11.463787" level="INFO">Typing text 'Cairo' into text field 'id:customer.address.street'.</msg>
+<arg>id:customer.address.street</arg>
+<arg>${ADDRESS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:11.463023" elapsed="0.316104"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:11.780335" level="INFO">Typing text 'Cairo' into text field 'id:customer.address.city'.</msg>
+<arg>id:customer.address.city</arg>
+<arg>${CITY}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:11.779627" elapsed="0.366652"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:12.147791" level="INFO">Typing text 'Egypt' into text field 'id:customer.address.state'.</msg>
+<arg>id:customer.address.state</arg>
+<arg>${STATE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:12.146903" elapsed="0.313297"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:12.462078" level="INFO">Typing text '12345' into text field 'id:customer.address.zipCode'.</msg>
+<arg>id:customer.address.zipCode</arg>
+<arg>${ZIP}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:12.461030" elapsed="0.328491"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:12.791044" level="INFO">Typing text '0100000000' into text field 'id:customer.phoneNumber'.</msg>
+<arg>id:customer.phoneNumber</arg>
+<arg>${PHONE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:12.790271" elapsed="0.404800"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:13.196929" level="INFO">Typing text '123456789' into text field 'id:customer.ssn'.</msg>
+<arg>id:customer.ssn</arg>
+<arg>${SSN}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:13.195922" elapsed="0.354817"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:13.552659" level="INFO">Typing text 'testUser_Mazen_Hekal_2026-01-02 14:02:10' into text field 'id:customer.username'.</msg>
+<arg>id:customer.username</arg>
+<arg>testUser_${FIRST_NAME}_${LAST_NAME}_${UTCTime}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:13.551406" elapsed="0.832721"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:14.385747" level="INFO">Typing text 'Test@123' into text field 'id:customer.password'.</msg>
+<arg>id:customer.password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:14.384756" elapsed="0.264116"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:14.649817" level="INFO">Typing text 'Test@123' into text field 'id:repeatedPassword'.</msg>
+<arg>id:repeatedPassword</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:14.649276" elapsed="0.247798"/>
+</kw>
+<arg>${UTCTime}</arg>
+<status status="PASS" start="2026-01-02T16:02:10.758955" elapsed="4.138566"/>
+</kw>
+<kw name="Submit Registration" owner="registration_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:14.900522" level="INFO">Clicking button 'css:input[value='Register']'.</msg>
+<arg>css:input[value='Register']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:14.899742" elapsed="0.628623"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:14.898667" elapsed="0.629972"/>
+</kw>
+<kw name="Verify User Is Logged In" owner="registration_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:21.059929" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-01-02T16:02:21.060477" level="FAIL">Text 'Welcome' did not appear in 5 seconds.</msg>
+<arg>Welcome</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2026-01-02T16:02:15.530856" elapsed="5.538448">Text 'Welcome' did not appear in 5 seconds.</status>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>Welcome</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-01-02T16:02:21.070011" elapsed="0.000152"/>
+</kw>
+<status status="FAIL" start="2026-01-02T16:02:15.529669" elapsed="5.541018">Text 'Welcome' did not appear in 5 seconds.</status>
+</kw>
+<kw name="Close Browser Session" owner="registration_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-02T16:02:21.073578" elapsed="2.457568"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:21.072432" elapsed="2.459067"/>
+</kw>
+<doc>Verify user is logged in automatically after registration</doc>
+<status status="FAIL" start="2026-01-02T16:02:05.990050" elapsed="17.542198">Text 'Welcome' did not appear in 5 seconds.</status>
+</test>
+<doc>User Registration and Automatic Login Validation</doc>
+<status status="FAIL" start="2026-01-02T16:02:05.967070" elapsed="17.568278"/>
+</suite>
+<suite id="s1-s3" name="3 Logout Relogin" source="D:\Software Testing ITI\RobotFramework\TestProject\tests\3_logout_relogin.robot">
+<test id="s1-s3-t1" name="Logout And ReLogin Validation" line="7">
+<kw name="Open Parabank" owner="login_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:23.560776" level="INFO">Opening browser 'Chrome' to base url 'https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-02T16:02:23.560224" elapsed="3.569986"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-02T16:02:27.130637" elapsed="0.160340"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>name:username</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:27.291748" elapsed="0.070961"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:23.559453" elapsed="3.803882"/>
+</kw>
+<kw name="Enter Credentials And Login" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:27.367418" level="INFO">Typing text 'john' into text field 'name:username'.</msg>
+<arg>name:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:27.366543" elapsed="0.278073"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:27.646298" level="INFO">Typing text 'demo' into text field 'name:password'.</msg>
+<arg>name:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:27.645382" elapsed="0.255553"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:27.902454" level="INFO">Clicking button 'css:input[value='Log In']'.</msg>
+<arg>css:input[value='Log In']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:27.901635" elapsed="1.561578"/>
+</kw>
+<arg>${VALID_USER}</arg>
+<arg>${VALID_PASS}</arg>
+<status status="PASS" start="2026-01-02T16:02:27.364764" elapsed="2.098759"/>
+</kw>
+<kw name="Verify Login Successful" owner="login_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Welcome</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:29.465220" elapsed="0.035238"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:29.530894" level="INFO">Current page contains text 'Welcome'.</msg>
+<arg>Welcome</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-02T16:02:29.501099" elapsed="0.030009"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:29.464406" elapsed="0.067196"/>
+</kw>
+<kw name="Logout" owner="login_keywords">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:29.533791" level="INFO">Clicking link 'Log Out'.</msg>
+<arg>Log Out</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:29.533331" elapsed="0.927547"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css:input[value='Log In']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:30.461429" elapsed="0.028582"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:29.532573" elapsed="0.957701"/>
+</kw>
+<kw name="Enter Credentials And Login" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:30.493245" level="INFO">Typing text 'john' into text field 'name:username'.</msg>
+<arg>name:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:30.492419" elapsed="0.261744"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:30.755115" level="INFO">Typing text 'demo' into text field 'name:password'.</msg>
+<arg>name:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:30.754570" elapsed="0.269672"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:31.025513" level="INFO">Clicking button 'css:input[value='Log In']'.</msg>
+<arg>css:input[value='Log In']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:31.024825" elapsed="1.067639"/>
+</kw>
+<arg>${VALID_USER}</arg>
+<arg>${VALID_PASS}</arg>
+<status status="PASS" start="2026-01-02T16:02:30.491133" elapsed="1.601771"/>
+</kw>
+<kw name="Verify Login Successful" owner="login_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Welcome</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:32.095220" elapsed="0.034190"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:32.158043" level="INFO">Current page contains text 'Welcome'.</msg>
+<arg>Welcome</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-02T16:02:32.130093" elapsed="0.028316"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:32.094031" elapsed="0.064762"/>
+</kw>
+<kw name="Close Browser Session" owner="login_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-02T16:02:32.161223" elapsed="2.345248"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:32.160096" elapsed="2.346753"/>
+</kw>
+<doc>Verify successful logout and re-login with valid credentials</doc>
+<status status="PASS" start="2026-01-02T16:02:23.557925" elapsed="10.949684"/>
+</test>
+<status status="PASS" start="2026-01-02T16:02:23.538908" elapsed="10.971509"/>
+</suite>
+<suite id="s1-s4" name="4 Create Savings Account" source="D:\Software Testing ITI\RobotFramework\TestProject\tests\4_create_savings_account.robot">
+<test id="s1-s4-t1" name="Create New Savings Account" line="9">
+<kw name="Open Parabank" owner="login_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:34.543829" level="INFO">Opening browser 'Chrome' to base url 'https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-02T16:02:34.543030" elapsed="4.037598"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-02T16:02:38.581253" elapsed="0.115258"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>name:username</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:38.696960" elapsed="0.065934"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:34.542121" elapsed="4.221111"/>
+</kw>
+<kw name="Enter Credentials And Login" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:38.765597" level="INFO">Typing text 'john' into text field 'name:username'.</msg>
+<arg>name:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:38.765043" elapsed="0.347327"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:39.113314" level="INFO">Typing text 'demo' into text field 'name:password'.</msg>
+<arg>name:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:39.112777" elapsed="0.253642"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:39.367265" level="INFO">Clicking button 'css:input[value='Log In']'.</msg>
+<arg>css:input[value='Log In']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:39.366821" elapsed="1.329156"/>
+</kw>
+<arg>${VALID_USER}</arg>
+<arg>${VALID_PASS}</arg>
+<status status="PASS" start="2026-01-02T16:02:38.764094" elapsed="1.932229"/>
+</kw>
+<kw name="Open New Account Page" owner="account_keywords">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:40.698560" level="INFO">Clicking link 'Open New Account'.</msg>
+<arg>Open New Account</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:40.698085" elapsed="0.806685"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Open New Account</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:41.505181" elapsed="0.037042"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:40.697327" elapsed="0.845341"/>
+</kw>
+<kw name="Select Account Type" owner="account_keywords">
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:41.545319" level="INFO">Selecting options from selection list 'id:type' by label SAVINGS.</msg>
+<arg>id:type</arg>
+<arg>${account_type}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-01-02T16:02:41.544701" elapsed="0.313946"/>
+</kw>
+<arg>SAVINGS</arg>
+<status status="PASS" start="2026-01-02T16:02:41.543654" elapsed="0.315274"/>
+</kw>
+<kw name="Select Funding Account" owner="account_keywords">
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:41.861199" level="INFO">Selecting options from selection list 'id:fromAccountId' by index 0.</msg>
+<arg>id:fromAccountId</arg>
+<arg>0</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2026-01-02T16:02:41.860695" elapsed="0.159531"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:41.859791" elapsed="0.160877"/>
+</kw>
+<kw name="Submit New Account Request" owner="account_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:42.023356" level="INFO">Clicking button 'css:input[value='Open New Account']'.</msg>
+<arg>css:input[value='Open New Account']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:42.022607" elapsed="0.233127"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:42.256154" elapsed="0.030061"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:42.021627" elapsed="0.265196"/>
+</kw>
+<kw name="Get New Account Number" owner="account_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:42.289229" elapsed="0.021623"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T16:02:42.311274" elapsed="0.292942"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-01-02T16:02:42.604671" elapsed="0.060361"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:42.722606" level="INFO">${account_number} = 13455</msg>
+<var>${account_number}</var>
+<arg>id:newAccountId</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:42.665655" elapsed="0.057067"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-02T16:02:42.723988" level="INFO">New Account Number: 13455</msg>
+<arg>New Account Number: ${account_number}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-02T16:02:42.723127" elapsed="0.001151"/>
+</kw>
+<return>
+<value>${account_number}</value>
+<status status="PASS" start="2026-01-02T16:02:42.724502" elapsed="0.000166"/>
+</return>
+<msg time="2026-01-02T16:02:42.725182" level="INFO">${account_number} = 13455</msg>
+<var>${account_number}</var>
+<status status="PASS" start="2026-01-02T16:02:42.288125" elapsed="0.437145"/>
+</kw>
+<kw name="Verify Account Details" owner="account_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:42.727650" elapsed="0.021413"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:42.750151" level="INFO">Clicking element 'id:newAccountId'.</msg>
+<arg>id:newAccountId</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:42.749648" elapsed="0.680443"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Account Details</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:43.430795" elapsed="0.034206"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:43.502373" level="INFO">Current page contains text '13455'.</msg>
+<arg>${account_number}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-02T16:02:43.465411" elapsed="0.037175"/>
+</kw>
+<arg>${account_number}</arg>
+<status status="PASS" start="2026-01-02T16:02:42.726306" elapsed="0.776523"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-01-02T16:02:43.504599" level="INFO">${AccountCreated} = True</msg>
+<arg>${AccountCreated}</arg>
+<arg>True</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-01-02T16:02:43.503606" elapsed="0.001146"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-01-02T16:02:43.507125" level="INFO">${account_number} = 13455</msg>
+<arg>${account_number}</arg>
+<arg>${account_number}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-01-02T16:02:43.506111" elapsed="0.001164"/>
+</kw>
+<kw name="Close Browser Session" owner="login_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-02T16:02:43.508940" elapsed="2.334222"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:43.508254" elapsed="2.335276"/>
+</kw>
+<doc>Automate savings account creation and verify details</doc>
+<status status="PASS" start="2026-01-02T16:02:34.540396" elapsed="11.303780"/>
+</test>
+<doc>Create a new savings account and validate account details</doc>
+<status status="PASS" start="2026-01-02T16:02:34.513802" elapsed="11.332936"/>
+</suite>
+<suite id="s1-s5" name="5 Loan Request" source="D:\Software Testing ITI\RobotFramework\TestProject\tests\5_loan_request.robot">
+<test id="s1-s5-t1" name="Loan Request With New Account" line="10">
+<kw name="Open Parabank" owner="login_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:45.880961" level="INFO">Opening browser 'Chrome' to base url 'https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-02T16:02:45.880354" elapsed="3.878979"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-02T16:02:49.760470" elapsed="0.141360"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>name:username</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:49.902306" elapsed="0.059226"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:45.879620" elapsed="4.082196"/>
+</kw>
+<kw name="Enter Credentials And Login" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:49.964838" level="INFO">Typing text 'john' into text field 'name:username'.</msg>
+<arg>name:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:49.963912" elapsed="0.314337"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:50.279632" level="INFO">Typing text 'demo' into text field 'name:password'.</msg>
+<arg>name:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:50.278834" elapsed="0.261739"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:50.541473" level="INFO">Clicking button 'css:input[value='Log In']'.</msg>
+<arg>css:input[value='Log In']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:50.540985" elapsed="1.110062"/>
+</kw>
+<arg>${VALID_USER}</arg>
+<arg>${VALID_PASS}</arg>
+<status status="PASS" start="2026-01-02T16:02:49.962688" elapsed="1.688730"/>
+</kw>
+<kw name="Open New Account Page" owner="account_keywords">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:51.653452" level="INFO">Clicking link 'Open New Account'.</msg>
+<arg>Open New Account</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:51.653030" elapsed="0.603722"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Open New Account</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:52.257176" elapsed="0.039172"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:51.652343" elapsed="0.644326"/>
+</kw>
+<kw name="Select Account Type" owner="account_keywords">
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:52.298915" level="INFO">Selecting options from selection list 'id:type' by label SAVINGS.</msg>
+<arg>id:type</arg>
+<arg>${account_type}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-01-02T16:02:52.298275" elapsed="0.576476"/>
+</kw>
+<arg>SAVINGS</arg>
+<status status="PASS" start="2026-01-02T16:02:52.297455" elapsed="0.577857"/>
+</kw>
+<kw name="Select Funding Account" owner="account_keywords">
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:52.877524" level="INFO">Selecting options from selection list 'id:fromAccountId' by index 0.</msg>
+<arg>id:fromAccountId</arg>
+<arg>0</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2026-01-02T16:02:52.877003" elapsed="0.324466"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:52.876150" elapsed="0.325646"/>
+</kw>
+<kw name="Submit New Account Request" owner="account_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:53.204247" level="INFO">Clicking button 'css:input[value='Open New Account']'.</msg>
+<arg>css:input[value='Open New Account']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:53.203561" elapsed="0.235512"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:53.439679" elapsed="0.030488"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:53.202615" elapsed="0.268011"/>
+</kw>
+<kw name="Get New Account Number" owner="account_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:53.473182" elapsed="0.020589"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T16:02:53.494300" elapsed="0.290096"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-01-02T16:02:53.784849" elapsed="0.063581"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:53.942068" level="INFO">${account_number} = 13677</msg>
+<var>${account_number}</var>
+<arg>id:newAccountId</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:53.848947" elapsed="0.093318"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-02T16:02:53.944405" level="INFO">New Account Number: 13677</msg>
+<arg>New Account Number: ${account_number}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-02T16:02:53.943044" elapsed="0.001633"/>
+</kw>
+<return>
+<value>${account_number}</value>
+<status status="PASS" start="2026-01-02T16:02:53.945016" elapsed="0.000225"/>
+</return>
+<msg time="2026-01-02T16:02:53.946127" level="INFO">${account_number} = 13677</msg>
+<var>${account_number}</var>
+<status status="PASS" start="2026-01-02T16:02:53.471975" elapsed="0.474312"/>
+</kw>
+<kw name="Verify Account Details" owner="account_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:53.948454" elapsed="0.023887"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:53.974659" level="INFO">Clicking element 'id:newAccountId'.</msg>
+<arg>id:newAccountId</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:53.973635" elapsed="0.630098"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Account Details</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:54.604336" elapsed="0.051642"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:54.697325" level="INFO">Current page contains text '13677'.</msg>
+<arg>${account_number}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-02T16:02:54.656430" elapsed="0.041195"/>
+</kw>
+<arg>${account_number}</arg>
+<status status="PASS" start="2026-01-02T16:02:53.947340" elapsed="0.750643"/>
+</kw>
+<kw name="Navigate To Request Loan Page" owner="loan_keywords">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:54.700933" level="INFO">Clicking link 'Request Loan'.</msg>
+<arg>Request Loan</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:54.700309" elapsed="1.067968"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Apply for a Loan</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:55.769062" elapsed="0.041016"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:54.699260" elapsed="1.111083"/>
+</kw>
+<kw name="Fill Loan Form" owner="loan_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:55.813339" level="INFO">Typing text '100' into text field 'id:amount'.</msg>
+<arg>id:amount</arg>
+<arg>${loan_amount}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:55.812771" elapsed="0.314143"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:56.128475" level="INFO">Typing text '50' into text field 'id:downPayment'.</msg>
+<arg>id:downPayment</arg>
+<arg>${down_payment}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:56.127547" elapsed="0.304822"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:56.434030" level="INFO">Selecting options from selection list 'id:fromAccountId' by value 13677.</msg>
+<arg>id:fromAccountId</arg>
+<arg>${account_number}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-01-02T16:02:56.432980" elapsed="0.206240"/>
+</kw>
+<arg>${LOAN_AMOUNT}</arg>
+<arg>${DOWN_PAYMENT}</arg>
+<arg>${account_number}</arg>
+<status status="PASS" start="2026-01-02T16:02:55.811732" elapsed="0.827883"/>
+</kw>
+<kw name="Submit Loan Request" owner="loan_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:56.642369" level="INFO">Clicking button 'css:input[value='Apply Now']'.</msg>
+<arg>css:input[value='Apply Now']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:56.641768" elapsed="0.253442"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:56.895832" elapsed="0.022297"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T16:02:56.918601" elapsed="1.252431"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-01-02T16:02:58.171586" elapsed="0.063808"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:58.281536" level="INFO">${loan_number} = 13788</msg>
+<var>${loan_number}</var>
+<arg>id:newAccountId</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:58.235987" elapsed="0.045680"/>
+</kw>
+<return>
+<value>${loan_number}</value>
+<status status="PASS" start="2026-01-02T16:02:58.282316" elapsed="0.000196"/>
+</return>
+<msg time="2026-01-02T16:02:58.283079" level="INFO">${loan_number} = 13788</msg>
+<var>${loan_number}</var>
+<status status="PASS" start="2026-01-02T16:02:56.640863" elapsed="1.642320"/>
+</kw>
+<kw name="Verify Loan Approved" owner="loan_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Approved</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:58.285595" elapsed="0.035303"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T16:02:58.321459" elapsed="0.021531"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T16:02:58.343397" elapsed="0.038733"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>id:newAccountId</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-01-02T16:02:58.382539" elapsed="0.058765"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:58.443066" level="INFO">Clicking element 'id:newAccountId'.</msg>
+<arg>id:newAccountId</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T16:02:58.442225" elapsed="0.548325"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T16:02:59.033020" level="INFO">Current page contains text '13788'.</msg>
+<arg>${loan_number}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-02T16:02:58.991195" elapsed="0.042036"/>
+</kw>
+<arg>${loan_number}</arg>
+<status status="PASS" start="2026-01-02T16:02:58.284355" elapsed="0.749120"/>
+</kw>
+<kw name="Close Browser Session" owner="login_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-02T16:02:59.035602" elapsed="2.407533"/>
+</kw>
+<status status="PASS" start="2026-01-02T16:02:59.034504" elapsed="2.409008"/>
+</kw>
+<doc>Automate loan request and verify approval</doc>
+<status status="PASS" start="2026-01-02T16:02:45.878088" elapsed="15.566189"/>
+</test>
+<doc>Loan Request Validation Test</doc>
+<status status="PASS" start="2026-01-02T16:02:45.849973" elapsed="15.597138"/>
+</suite>
+<status status="FAIL" start="2026-01-02T16:01:56.438497" elapsed="65.012535"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="4" fail="1" skip="0">Tests</stat>
+<stat name="1 Negative Login" id="s1-s1" pass="1" fail="0" skip="0">Tests.1 Negative Login</stat>
+<stat name="2 Registration And Login" id="s1-s2" pass="0" fail="1" skip="0">Tests.2 Registration And Login</stat>
+<stat name="3 Logout Relogin" id="s1-s3" pass="1" fail="0" skip="0">Tests.3 Logout Relogin</stat>
+<stat name="4 Create Savings Account" id="s1-s4" pass="1" fail="0" skip="0">Tests.4 Create Savings Account</stat>
+<stat name="5 Loan Request" id="s1-s5" pass="1" fail="0" skip="0">Tests.5 Loan Request</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-01-02T16:01:57.315650" level="ERROR">Error in file 'D:\Software Testing ITI\RobotFramework\TestProject\resources\login_keywords.robot' on line 3: Processing variable file '../variables/variables.robot' failed: Importing variable file '../variables/variables.robot' failed: ModuleNotFoundError: No module named '.'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Program Files\Python313\Scripts\robot.exe
+  C:\Program Files\Python313\python313.zip
+  C:\Program Files\Python313\DLLs
+  C:\Program Files\Python313\Lib
+  C:\Program Files\Python313
+  C:\Users\User\AppData\Roaming\Python\Python313\site-packages
+  C:\Program Files\Python313\Lib\site-packages</msg>
+<msg time="2026-01-02T16:02:23.553344" level="ERROR">Error in file 'D:\Software Testing ITI\RobotFramework\TestProject\resources\login_keywords.robot' on line 3: Processing variable file '../variables/variables.robot' failed: Importing variable file '../variables/variables.robot' failed: ModuleNotFoundError: No module named '.'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Program Files\Python313\Scripts\robot.exe
+  C:\Program Files\Python313\python313.zip
+  C:\Program Files\Python313\DLLs
+  C:\Program Files\Python313\Lib
+  C:\Program Files\Python313
+  C:\Users\User\AppData\Roaming\Python\Python313\site-packages
+  C:\Program Files\Python313\Lib\site-packages</msg>
+<msg time="2026-01-02T16:02:34.524104" level="WARN">Error in file 'D:\Software Testing ITI\RobotFramework\TestProject\resources\account_keywords.robot' on line 29: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2026-01-02T16:02:34.534683" level="ERROR">Error in file 'D:\Software Testing ITI\RobotFramework\TestProject\resources\login_keywords.robot' on line 3: Processing variable file '../variables/variables.robot' failed: Importing variable file '../variables/variables.robot' failed: ModuleNotFoundError: No module named '.'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Program Files\Python313\Scripts\robot.exe
+  C:\Program Files\Python313\python313.zip
+  C:\Program Files\Python313\DLLs
+  C:\Program Files\Python313\Lib
+  C:\Program Files\Python313
+  C:\Users\User\AppData\Roaming\Python\Python313\site-packages
+  C:\Program Files\Python313\Lib\site-packages</msg>
+<msg time="2026-01-02T16:02:45.859154" level="WARN">Error in file 'D:\Software Testing ITI\RobotFramework\TestProject\resources\loan_keywords.robot' on line 23: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2026-01-02T16:02:45.872240" level="ERROR">Error in file 'D:\Software Testing ITI\RobotFramework\TestProject\resources\login_keywords.robot' on line 3: Processing variable file '../variables/variables.robot' failed: Importing variable file '../variables/variables.robot' failed: ModuleNotFoundError: No module named '.'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Program Files\Python313\Scripts\robot.exe
+  C:\Program Files\Python313\python313.zip
+  C:\Program Files\Python313\DLLs
+  C:\Program Files\Python313\Lib
+  C:\Program Files\Python313
+  C:\Users\User\AppData\Roaming\Python\Python313\site-packages
+  C:\Program Files\Python313\Lib\site-packages</msg>
+</errors>
+</robot>

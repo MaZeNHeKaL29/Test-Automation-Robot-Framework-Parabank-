@@ -46,14 +46,6 @@ Test-Automation-Robot-Framework-Parabank
 
 ---
 
-## Prerequisites
-
-- Python 3.8 or higher  
-- Google Chrome  
-- ChromeDriver (matching Chrome version)  
-- pip  
-
----
 
 ## Setup Instructions
 

@@ -17,6 +17,7 @@ ${STATE}          Egypt
 ${ZIP}            12345
 ${PHONE}          0100000000
 ${SSN}            123456789
+${USERNAME}       mazen12345
 ${PASSWORD}       Test@123
 
 ${AccountCreated}    False

@@ -10,7 +10,6 @@ Navigate To Registration Page
     Click Link    Register
 
 Fill Registration Form
-    [Arguments]    ${UTCTime}
     Input Text    id:customer.firstName    ${FIRST_NAME}
     Input Text    id:customer.lastName     ${LAST_NAME}
     Input Text    id:customer.address.street    ${ADDRESS}
@@ -19,7 +18,7 @@ Fill Registration Form
     Input Text    id:customer.address.zipCode   ${ZIP}
     Input Text    id:customer.phoneNumber       ${PHONE}
     Input Text    id:customer.ssn                ${SSN}
-    Input Text    id:customer.username           testUser_${FIRST_NAME}_${LAST_NAME}_${UTCTime}
+    Input Text    id:customer.username           ${USERNAME}
     Input Text    id:customer.password           ${PASSWORD}
     Input Text    id:repeatedPassword            ${PASSWORD}
 

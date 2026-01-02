@@ -1,6 +1,6 @@
 *** Settings ***
-Resource    ../resources/login_keywords.robot
-Resource    ../variables/variables.robot
+Resource          ../keywords/login_keywords.robot
+Resource         ../resources/variables.robot
 Test Teardown    Close Browser Session
 
 *** Test Cases ***

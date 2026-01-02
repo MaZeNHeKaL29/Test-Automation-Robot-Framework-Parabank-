@@ -1,9 +1,9 @@
 *** Settings ***
 Documentation     Loan Request Validation Test
-Resource          ${CURDIR}/../resources/loan_keywords.robot
-Resource          ${CURDIR}/../resources/account_keywords.robot
-Resource          ${CURDIR}/../resources/login_keywords.robot
-Resource          ${CURDIR}/../variables/variables.robot
+Resource          ../keywords/loan_keywords.robot
+Resource          ../keywords/account_keywords.robot
+Resource          ../keywords/login_keywords.robot
+Resource          ../resources/variables.robot
 Test Teardown     Close Browser Session
 
 *** Test Cases ***

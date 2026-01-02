@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation     Create a new savings account and validate account details
-Resource          ../resources/account_keywords.robot
-Resource          ../resources/login_keywords.robot
-Resource          ../variables/variables.robot
+Resource          ../keywords/account_keywords.robot
+Resource          ../keywords/login_keywords.robot
+Resource          ../resources/variables.robot
 Test Teardown     Close Browser Session
 
 *** Test Cases ***

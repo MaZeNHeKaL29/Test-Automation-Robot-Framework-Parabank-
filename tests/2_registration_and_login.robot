@@ -1,8 +1,8 @@
 *** Settings ***
 Library           DateTime
 Documentation     User Registration and Automatic Login Validation
-Resource          ../resources/registration_keywords.robot
-Resource          ../variables/variables.robot
+Resource          ../keywords/registration_keywords.robot
+Resource         ../resources/variables.robot
 Test Teardown     Close Browser Session
 
 *** Test Cases ***
